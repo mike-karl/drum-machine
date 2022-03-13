@@ -1,0 +1,228 @@
+$bgcolor: #00363a;
+$wrapperBgcolor: #428e92;
+$padColor: #006064;
+$secondaryColor: #ff7043;
+@font-face{
+  font-family:'digital-clock-font';
+  src: url('./fontStyles/DS-DIGI.TTF');
+}
+
+body {
+  background-color: $bgcolor;
+
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+.wrapper{
+  background-color: $wrapperBgcolor;
+  padding: 3rem;
+  border: 10px solid #ff7043;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  position: absolute;
+
+  user-select: none;
+}
+.drumPad {
+  width: 85%;
+  height: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  
+}
+.pad-bank {
+  width: 85%;
+  height: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  
+}
+.drum-pad {
+  background-color: $padColor;
+  min-width: 7rem;
+  min-height: 2.5rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px #333;
+}
+.pointerOnHover:hover {
+  cursor: pointer;
+}
+.drum-pad:active {
+  background-color: #ff7043;
+  box-shadow: none;
+}
+.controller {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+.btnSwitch {
+  width: 6rem;
+  height: 1.75rem;
+  border: 3px solid black;
+}
+.btnSwitch#off {
+  background-image: linear-gradient(to right, #ff7043 40%, black 40%);
+}
+.btnSwitch#on {
+  background-image: linear-gradient(to right, black 60%, #ff7043 60%);
+}
+.powerText {
+  margin-bottom: -.25rem;
+  padding-bottom: 2px;
+}
+.inputDisplay {
+  font-family:'digital-clock-font';
+  width: 10rem;
+  height: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  background-color: $bgcolor;
+  border: 5px solid black;
+}
+.volumeSlider {
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+#volume {
+  background: none;
+  width: 15rem;
+}
+.bank {
+  margin-left: 0;
+  margin-top: .25rem;
+}
+.bankText {
+  margin-top: 0rem;
+  margin-left: 1.25rem;
+  margin-bottom: -.25rem;
+}
+input[type=range] {
+  height: 48px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000;
+  background: #00363A;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 40px;
+  width: 16px;
+  border-radius: 5px;
+  background: #FF7043;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -16px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #00363A;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000;
+  background: #00363A;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 40px;
+  width: 16px;
+  border-radius: 5px;
+  background: #FF7043;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #00363A;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background: #00363A;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 1px 1px 1px #000000;
+  border: 1px solid #000000;
+  height: 40px;
+  width: 16px;
+  border-radius: 5px;
+  background: #FF7043;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #00363A;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #00363A;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    transform: scale(0.7);
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    transform: scale(0.7);
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .wrapper {
+    transform: scale(0.7);
+    grid-template-columns: 1fr;
+  }
+
+
+}
