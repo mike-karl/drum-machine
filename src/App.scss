@@ -6,7 +6,6 @@ $secondaryColor: #ff7043;
   font-family:'digital-clock-font';
   src: url('./fontStyles/DS-DIGI.TTF');
 }
-
 body {
   background-color: $bgcolor;
 
@@ -115,7 +114,6 @@ body {
 }
 .bankText {
   margin-top: 0rem;
-  margin-left: 1.25rem;
   margin-bottom: -.25rem;
 }
 input[type=range] {
